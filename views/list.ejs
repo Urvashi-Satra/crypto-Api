@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fetch using MySQL and Node.js</title>
+</head>
+<body>
+    <div class="table-data">
+
+    <table border="1">
+        <tr>
+            <th>rank</th>
+            <th>name</th>
+            <th>price</th>
+            <th>24h</th>
+            <th>7d</th>
+            <th>marketcap</th>
+            <th>volume</th>
+            <th>circulatingsupply</th>
+        </tr>
+        
+        <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=data.rank; %></td>
+            <td><%=data.name %></td>
+            <td><%=data.price %></td>
+            <td><%=data.24h %></td>
+            <td><%=data.7d%></td>
+            <td><%=data.marketcap%></td>
+            <td><%=data.volume%></td>
+            <td><%=data.circulatingsupply%></td>
+            
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="8">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>
